@@ -1,0 +1,33 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the binary number
+        Console.WriteLine("Enter a binary number:");
+        string binary = Console.ReadLine();
+
+        // Convert the binary string to decimal using recursion
+        int decimalValue = BinaryToDecimal(binary, binary.Length - 1);
+
+        // Output the result
+        Console.WriteLine("The decimal value is: " + decimalValue);
+    }
+
+    // Recursive function to convert binary to decimal
+    static int BinaryToDecimal(string binary, int index)
+    {
+        // Base case: If index is less than 0, return 0 (end of recursion)
+        if (index < 0)
+        {
+            return 0;
+        }
+
+        // Get the current digit (0 or 1) and multiply it by 2^index
+        int currentDigit = binary[index] == '1' ? 1 : 0;
+        
+        // Recursive call to process the next digit
+        return currentDigit * (int)Math.Pow(2, binary.Length - 1 - index) + BinaryToDecimal(binary, index - 1);
+    }
+}
