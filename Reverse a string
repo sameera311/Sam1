@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input a string
+        Console.WriteLine("Enter a string:");
+        string input = Console.ReadLine();
+
+        // Convert string to a character array
+        char[] charArray = input.ToCharArray();
+
+        // Reverse the character array
+        Array.Reverse(charArray);
+
+        // Convert the reversed character array back to a string
+        string reversedString = new string(charArray);
+
+        // Output the reversed string
+        Console.WriteLine("Reversed string: " + reversedString);
+    }
+}
