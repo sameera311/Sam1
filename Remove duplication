@@ -1,0 +1,42 @@
+using System;
+using System.Collections.Generic;
+
+class Program
+{
+    static void Main()
+    {
+        // Input a string
+        Console.WriteLine("Enter a string:");
+        string input = Console.ReadLine();
+
+        // Remove duplicate characters
+        string result = RemoveDuplicates(input);
+
+        // Output the result
+        Console.WriteLine("String after removing duplicates: " + result);
+    }
+
+    // Function to remove duplicate characters from a string
+    static string RemoveDuplicates(string str)
+    {
+        // Create a HashSet to track unique characters
+        HashSet<char> seen = new HashSet<char>();
+
+        // Create a list to store characters that will form the result string
+        List<char> resultList = new List<char>();
+
+        // Iterate through each character in the string
+        foreach (char c in str)
+        {
+            // If the character is not in the HashSet, add it to the result list and HashSet
+            if (!seen.Contains(c))
+            {
+                resultList.Add(c);
+                seen.Add(c);
+            }
+        }
+
+        // Convert the result list back to a string and return it
+        return new string(resultList.ToArray());
+    }
+}
