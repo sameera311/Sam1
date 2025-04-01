@@ -1,0 +1,35 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the base and exponent
+        Console.WriteLine("Enter the base number:");
+        int baseNumber = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("Enter the exponent:");
+        int exponent = Convert.ToInt32(Console.ReadLine());
+
+        // Calculate the power using recursion
+        int result = Power(baseNumber, exponent);
+
+        // Output the result
+        Console.WriteLine($"{baseNumber} raised to the power of {exponent} is: {result}");
+    }
+
+    // Recursive function to calculate power
+    static int Power(int baseNum, int exponent)
+    {
+        // Base case: If the exponent is 0, return 1 (any number raised to 0 is 1)
+        if (exponent == 0)
+        {
+            return 1;
+        }
+        else
+        {
+            // Recursive case: multiply baseNum by the result of power(baseNum, exponent-1)
+            return baseNum * Power(baseNum, exponent - 1);
+        }
+    }
+}
