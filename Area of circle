@@ -1,0 +1,23 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the radius of the circle
+        Console.WriteLine("Enter the radius of the circle:");
+        double radius = Convert.ToDouble(Console.ReadLine());
+
+        // Calculate the area of the circle
+        double area = CalculateArea(radius);
+
+        // Output the result
+        Console.WriteLine("The area of the circle is: " + area);
+    }
+
+    // Function to calculate the area of the circle
+    static double CalculateArea(double radius)
+    {
+        return Math.PI * radius * radius;  // Pi * radius^2
+    }
+}
