@@ -1,0 +1,27 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input a string
+        Console.WriteLine("Enter a string:");
+        string input = Console.ReadLine();
+
+        // Count the number of words in the string
+        int wordCount = CountWords(input);
+
+        // Output the number of words
+        Console.WriteLine("The number of words in the string is: " + wordCount);
+    }
+
+    // Function to count words in a string
+    static int CountWords(string str)
+    {
+        // Split the string by spaces or any whitespace and filter out empty entries
+        string[] words = str.Split(new char[] { ' ', '\t', '\n', '\r' }, StringSplitOptions.RemoveEmptyEntries);
+
+        // Return the number of words
+        return words.Length;
+    }
+}
