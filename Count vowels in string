@@ -1,0 +1,37 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input a string
+        Console.WriteLine("Enter a string:");
+        string input = Console.ReadLine();
+
+        // Call function to count vowels
+        int vowelCount = CountVowels(input);
+
+        // Output the number of vowels
+        Console.WriteLine("The number of vowels in the string is: " + vowelCount);
+    }
+
+    // Function to count vowels in a string
+    static int CountVowels(string str)
+    {
+        int count = 0;
+        // Convert the string to lowercase for case-insensitive comparison
+        str = str.ToLower();
+
+        // Iterate through each character in the string
+        foreach (char c in str)
+        {
+            // Check if the character is a vowel
+            if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u')
+            {
+                count++;
+            }
+        }
+
+        return count;
+    }
+}
