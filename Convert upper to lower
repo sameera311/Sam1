@@ -1,0 +1,17 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input a string
+        Console.WriteLine("Enter a string in uppercase:");
+        string input = Console.ReadLine();
+
+        // Convert the string to lowercase
+        string lowercaseString = input.ToLower();
+
+        // Output the lowercase string
+        Console.WriteLine("The string in lowercase is: " + lowercaseString);
+    }
+}
