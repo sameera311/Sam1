@@ -1,0 +1,45 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the size of the array
+        Console.WriteLine("Enter the size of the array:");
+        int size = Convert.ToInt32(Console.ReadLine());
+
+        // Create an array to store elements
+        int[] numbers = new int[size];
+
+        // Input the elements of the array
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            numbers[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Find the smallest number
+        int smallest = FindSmallest(numbers);
+
+        // Output the smallest number
+        Console.WriteLine("The smallest number in the array is: " + smallest);
+    }
+
+    // Function to find the smallest number in an array
+    static int FindSmallest(int[] arr)
+    {
+        // Initialize the smallest number as the first element
+        int smallest = arr[0];
+
+        // Iterate through the array
+        for (int i = 1; i < arr.Length; i++)
+        {
+            if (arr[i] < smallest)
+            {
+                smallest = arr[i]; // Update smallest if a smaller element is found
+            }
+        }
+
+        return smallest;
+    }
+}
