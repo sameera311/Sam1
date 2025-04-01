@@ -1,0 +1,25 @@
+using System;
+using System.IO;
+
+namespace FileReadWrite
+{
+    class Program
+    {
+        static void Main()
+        {
+            string filePath = "SampleFile.txt";
+
+            // Write to the file
+            Console.Write("Enter the content to write into the file: ");
+            string contentToWrite = Console.ReadLine();
+            File.WriteAllText(filePath, contentToWrite);
+            Console.WriteLine($"Content written to file: {filePath}");
+
+            // Read from the file
+            Console.WriteLine("\nReading content from the file...");
+            string contentRead = File.ReadAllText(filePath);
+            Console.WriteLine("Content of the file:");
+            Console.WriteLine(contentRead);
+        }
+    }
+}
