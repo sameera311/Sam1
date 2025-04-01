@@ -1,0 +1,25 @@
+using System;
+
+namespace SwapNumbersApp
+{
+    class Program
+    {
+        static void Main()
+        {
+            Console.Write("Enter the first number: ");
+            int num1 = Convert.ToInt32(Console.ReadLine());
+
+            Console.Write("Enter the second number: ");
+            int num2 = Convert.ToInt32(Console.ReadLine());
+
+            Console.WriteLine("Before swapping: num1 = {0}, num2 = {1}", num1, num2);
+
+            // Swap using arithmetic operations
+            num1 = num1 + num2;  // Step 1: Add num1 and num2
+            num2 = num1 - num2;  // Step 2: Subtract num2 from the sum to get the original num1
+            num1 = num1 - num2;  // Step 3: Subtract the new num2 from the sum to get the original num2
+
+            Console.WriteLine("After swapping: num1 = {0}, num2 = {1}", num1, num2);
+        }
+    }
+}
