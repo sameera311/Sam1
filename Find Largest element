@@ -1,0 +1,45 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        // Input the size of the array
+        Console.WriteLine("Enter the size of the array:");
+        int size = Convert.ToInt32(Console.ReadLine());
+
+        // Create an array to store elements
+        int[] numbers = new int[size];
+
+        // Input the elements of the array
+        Console.WriteLine("Enter the elements of the array:");
+        for (int i = 0; i < size; i++)
+        {
+            numbers[i] = Convert.ToInt32(Console.ReadLine());
+        }
+
+        // Find the largest element in the array
+        int largest = FindLargest(numbers);
+
+        // Output the largest element
+        Console.WriteLine("The largest element in the array is: " + largest);
+    }
+
+    // Function to find the largest element in an array
+    static int FindLargest(int[] arr)
+    {
+        // Initialize the largest element as the first element of the array
+        int largest = arr[0];
+
+        // Iterate through the array
+        foreach (int num in arr)
+        {
+            if (num > largest)
+            {
+                largest = num; // Update largest if a larger element is found
+            }
+        }
+
+        return largest;
+    }
+}
